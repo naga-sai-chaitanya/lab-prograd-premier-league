@@ -6,6 +6,11 @@ let trophiesWon = 27;
 
 //Write your function here
 
+function createManager(managerName, managerAge, currentTeam, trophiesWon) {
+  let result = [managerName, managerAge, currentTeam, trophiesWon];
+  return result;
+}
+
 // Don't edit the following code
 try {
   var manager = createManager(
@@ -21,6 +26,15 @@ try {
 //Progression 2 - create a formation object and return it
 var formation = [4, 4, 3];
 
+function createFormation(array); {
+  var obj = {
+    defender: array[0],
+    midfield: array[1],
+    forward: array[2]
+  };
+  return obj;
+}
+
 //write your function here
 
 // Dont edit the following code
@@ -31,11 +45,47 @@ try {
   //do nothing
 }
 
+function filterByDebut(year) {
+  let arr = [];
+  players.forEach(player => {
+    if (year == player.debut) {
+      arr.push(player);
+    }
+  });
+  return arr;
+}
 //Progression 3 - Filter players that debuted in ___ year
 
 //Progression 4 - Filter players that play at the position _______
 
+function filterByPosition(position) {
+  let result = [];
+  var player;
+  for (player in data) {
+    if (data[player] == position) {
+      result.push(player);
+    }
+  }
+  return result;
+}
+
+
 //Progression 5 - Filter players that have won ______ award
+function filterByAward(awardName) {
+  let result = [];
+  if (awardName == result) {
+    return "";
+  } else {
+    for (let i = 0; i < players.length; i++) {
+      for (let j = 0; j < players[i].awards.length; j++) {
+        if (players[i].awards[j].name == awardName) {
+          result.push(players[i]);
+        }
+      }
+    }
+    return result;
+  }
+}
 
 //Progression 6 - Filter players that won ______ award ____ times
 
